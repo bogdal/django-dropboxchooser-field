@@ -12,6 +12,12 @@ class DropboxChooserField(forms.FileField):
 
     widget = DropboxChooserWidget
 
+    def __init__(self, extensions=[], *args, **kwargs):
+        super(DropboxChooserField, self).__init__(*args, **kwargs)
+        extensions = map(lambda x: x if x.startswith(".") else (".%s" % x),
+                         extensions)
+        self.widget.attrs.update({'data-extensions': " ".join(extensions)})
+
     def _download_file(self, url):
         filename = urlparse(url).path.split('/')[-1]
         return File(StringIO(requests.get(url).content), name=filename)
