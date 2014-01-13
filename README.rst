@@ -14,12 +14,16 @@ Dropbox chooser field for django.
 Quickstart
 ----------
 
-1. Install the package via ``pip``::
+1. Install the package via ``pip``:
+
+.. code-block:: bash
 
     pip install django-dropboxchooser-field
     
   
-2. Add ``dropboxchooser_field`` to ``INSTALLED_APPS``::
+2. Add ``dropboxchooser_field`` to ``INSTALLED_APPS``:
+
+.. code-block:: python
 
     INSTALLED_APPS = (
       ...
@@ -28,14 +32,16 @@ Quickstart
     )
   
 
-3. Add your `Drop-in <https://www.dropbox.com/developers/dropins/chooser/js>`_ app key to the ``settings.py`` file::
+3. Add your `Drop-in <https://www.dropbox.com/developers/dropins/chooser/js>`_ app key to the ``settings.py`` file:
+
+.. code-block:: python
 
     DROPBOX_APP_KEY = ''
     
 Usage
 -----
 
-::
+.. code-block:: python
 
     from django import forms
     from dropboxchooser_field.fields import DropboxChooserField
