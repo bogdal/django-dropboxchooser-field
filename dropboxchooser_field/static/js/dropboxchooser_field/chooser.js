@@ -16,7 +16,7 @@
         };
         
         // add extensions only if specified
-        if chooser_field.hasAttribute("data-extensions") {
+        if(chooser_field.hasAttribute("data-extensions")) {
             options['extensions'] =  chooser_field.getAttribute("data-extensions")
                 .split(" ");
         }
