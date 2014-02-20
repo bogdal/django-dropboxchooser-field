@@ -10,9 +10,7 @@ class DropboxChooserWidget(DropboxTextInput):
 
     def __init__(self, attrs=None):
         default_attrs = {
-            'id': 'dropboxjs',
-            'style': 'visibility: hidden',
-            'data-link-type': 'direct',
+            'style': 'display: none',
             'data-app-key': getattr(settings, 'DROPBOX_APP_KEY', None)}
 
         if attrs is not None:
@@ -21,4 +19,5 @@ class DropboxChooserWidget(DropboxTextInput):
         super(DropboxChooserWidget, self).__init__(default_attrs)
 
     class Media:
-        js = ["https://www.dropbox.com/static/api/1/dropins.js"]
+        js = ['https://www.dropbox.com/static/api/2/dropins.js',
+              'js/dropboxchooser_field/chooser.js']
