@@ -9,12 +9,17 @@
 
         options = {
             linkType: "direct",
-            extensions: chooser_field.getAttribute("data-extensions").split(" "),
 
             success: function(files) {
                 chooser_field.value = files[0].link
             }
         };
+        
+        // add extensions only if specified
+        if chooser_field.hasAttribute("data-extensions") {
+            options['extensions'] =  chooser_field.getAttribute("data-extensions")
+                .split(" ");
+        }
 
         var button = Dropbox.createChooseButton(options);
         chooser_field.parentNode.insertBefore(button, chooser_field);
