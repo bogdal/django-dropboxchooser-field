@@ -11,7 +11,13 @@
             linkType: "direct",
 
             success: function(files) {
-                chooser_field.value = files[0].link
+                chooser_field.value = files[0].link;
+                var event = new CustomEvent('dropboxChooserSuccess', { 'file': files[0] });
+                chooser_field.dispatchEvent(event);
+            },
+
+            cancel: function() {
+                chooser_field.dispatchEvent(new CustomEvent('dropboxChooserCancel'));
             }
         };
         
