@@ -7,7 +7,7 @@ django-dropboxchooser-field
 
 Dropbox chooser field for django.
 
-.. image:: http://bogdal.pl/dropboxchooser.png
+.. image:: https://github-bogdal.s3.amazonaws.com/django-dropboxchooser-field/dropboxchooser.png
     :target: https://www.dropbox.com/developers/dropins/chooser/js
     
 
